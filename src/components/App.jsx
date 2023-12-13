@@ -15,14 +15,6 @@ const App = () => {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    const existingContacts = localStorage.getItem('contacts');
-    const parsedContacts = JSON.parse(existingContacts);
-    if (parsedContacts) {
-      setContacts(parsedContacts);
-    }
-  }, []);
-
-  useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
